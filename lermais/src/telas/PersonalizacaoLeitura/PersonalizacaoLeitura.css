@@ -1,0 +1,298 @@
+:root {
+    --bg-body: #ffffff;
+    --bg-card: #f8f9fa;
+    --bg-input: #f0f4f8;
+    --border-input: #e1e8ed;
+    --text-primary: #000000;
+    --text-secondary: #4a4a4a;
+    --text-label: #1a1a1a;
+    --brand-primary: #27ae60;
+    --brand-secondary: #2ecc71;
+    --shadow-card: rgba(0, 0, 0, 0.03);
+    --bg-option: #e1e8ed;
+    --text-option: #1a1a1a;
+    --progress-bg: #e1e8ed;
+    --bg-back-btn: #e1e8ed;
+    --text-back-btn: #a0a0a0;
+}
+
+:root.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-input: #2a2a2a;
+    --border-input: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-label: #e0e0e0;
+    --shadow-card: rgba(0, 0, 0, 0.2);
+    --bg-option: #3a3a3a;
+    --text-option: #ffffff;
+    --progress-bg: #3a3a3a;
+    --bg-back-btn: #2a2a2a;
+    --text-back-btn: #777777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.personalizacao-leitura-wrapper {
+    background-color: var(--bg-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-input);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-label);
+}
+
+.logo span {
+    color: #27ae60;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-container h1 {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+}
+
+progress {
+    width: 100px;
+    height: 8px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--progress-bg);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--progress-bg);
+    border-radius: 4px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--brand-secondary);
+    border-radius: 4px;
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--brand-secondary);
+    border-radius: 4px;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-input);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.theme-toggle::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f1c40f;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.theme-toggle.dark::before {
+    box-shadow: inset -4px -2px 0 0 var(--bg-card);
+    background-color: transparent;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    transform: rotate(-15deg);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+}
+
+.card-register {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 580px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-card);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card-register h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.question-group {
+    border: none;
+    margin-bottom: 25px;
+}
+
+.question-group legend {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-label);
+    margin-bottom: 15px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    list-style: none;
+}
+
+.options-grid.large-option {
+    grid-template-columns: 1fr;
+}
+
+.option-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-option);
+    color: var(--text-option);
+    height: 50px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    border: 1px solid transparent;
+}
+
+.option-button input[type="radio"] {
+    display: none;
+}
+
+.option-button.selected {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+}
+
+.form-actions, .form-actions-single {
+    display: flex;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.form-actions-single .btn-submit {
+    width: 100%;
+}
+
+.btn-submit {
+    flex: 1;
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    border: none;
+    height: 54px;
+    border-radius: 27px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-submit:hover {
+    background-color: var(--brand-secondary);
+}
+
+.btn-secondary {
+    flex: 1;
+    background-color: var(--bg-back-btn);
+    color: var(--text-back-btn);
+    border: none;
+    height: 54px;
+    border-radius: 27px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: plFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+header.fade-in-element { animation-delay: 0.1s; }
+main.fade-in-element { animation-delay: 0.3s; }
+
+@keyframes plFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}

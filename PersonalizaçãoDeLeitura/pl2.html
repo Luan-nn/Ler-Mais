@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LerMais - Metas e Origens</title>
+    <link rel="stylesheet" href="pl.css">
+</head>
+<body>
+
+    <header class="fade-in-element">
+        <strong class="logo">Ler<span>Mais</span></strong>
+        <section class="progress-container">
+            <h1>Passo 2 de 2</h1>
+            <progress value="100" max="100"></progress>
+        </section>
+        <button type="button" id="themeToggleBtn" class="theme-toggle" aria-label="Alternar tema"></button>
+    </header>
+
+    <main id="mainContent">
+        <section class="card-register fade-in-element">
+            <h2>Suas metas e Origens</h2>
+            <p class="subtitle">defina o seu objetivo para ajudar a manter o foco</p>
+
+            <form id="goalsForm" novalidate>
+                <fieldset class="question-group">
+                    <legend>3. Onde conheceu o site?</legend>
+                    <ul class="options-grid large-option">
+                        <li>
+                            <label class="option-button selected">
+                                <input type="radio" name="origin" value="redes-sociais" checked> Redes Sociais (Instagram/Tik Tok...)
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset class="question-group">
+                    <legend>4. Qual sua frequência atual de leitura?</legend>
+                    <ul class="options-grid">
+                        <li>
+                            <label class="option-button selected">
+                                <input type="radio" name="frequency" value="diariamente" checked> Diariamente
+                            </label>
+                        </li>
+                        <li>
+                            <label class="option-button">
+                                <input type="radio" name="frequency" value="algumas-vezes"> Algumas vezes
+                            </label>
+                        </li>
+                        <li>
+                            <label class="option-button">
+                                <input type="radio" name="frequency" value="raramente"> Raramente
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <nav class="form-actions">
+                    <a href="pl.html" class="btn-secondary">Voltar</a>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Salvar e criar conta</span>
+                        <span class="spinner"></span>
+                    </button>
+                </nav>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <small class="footer-caption">Etapa de preferências para configuração inicial</small>
+    </footer>
+
+    <script src="pl.js"></script>
+</body>
+</html>
+
